@@ -93,7 +93,7 @@ const BoardModify = () => {
 
 		// 수정 put
 		// 인자: 주소, 수정된 게시물 데이터, 헤더
-		const response = await axios.put('http://localhost:8080/board/modify', board,
+		const response = await axios.put(`${host}/board/modify`, board,
 			{
 				headers: {
 					Authorization: token
@@ -118,10 +118,10 @@ const BoardModify = () => {
 		e.preventDefault();
 
 		// 삭제는 Delete
-		const response = await axios.delete(`http://localhost:8080/board/remove?no=${board.no}`,
+		const response = await axios.delete(`${host}/board/remove?no=${board.no}`,
 			{
 				headers: {
-					Authorization: 'eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzE2MzEyNTksImV4cCI6MTczNDIyMzI1OSwic3ViIjoidXNlciJ9.rT599z81bLiVj6XTT6AVpKUWNJwgImQ2Mke5_dc63HE' // 토큰
+					Authorization: token
 				}
 			}
 		);
