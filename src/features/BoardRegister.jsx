@@ -64,7 +64,11 @@ const BoardRegister = () => {
 		const formData = new FormData();
 		formData.append('title', board.title);
 		formData.append('content', board.content);
-		formData.append('uploadFile', board.uploadFile);
+
+		if (board.uploadFile !== undefined) {
+			formData.append('uploadFile', board.uploadFile);
+		};
+
 
 		// 등록은 post 조회는 get
 		// 인자: 주소, 게시물 데이터, 헤더
