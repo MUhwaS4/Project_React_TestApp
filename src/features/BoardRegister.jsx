@@ -65,6 +65,7 @@ const BoardRegister = () => {
 		formData.append('title', board.title);
 		formData.append('content', board.content);
 
+		// 사용자가 입력한 파일이 없다면 폼 데이터에서 제외!
 		if (board.uploadFile !== undefined) {
 			formData.append('uploadFile', board.uploadFile);
 		};

@@ -111,7 +111,12 @@ const BoardDetail = () => {
 							<Form.Control type="text" value={board.modDate} readOnly/>
 						</Form.Group>
 
-						<img src={`${IMG_PATH}${board.imgpath}`} alt="test" />
+						{/* 이미지가 있을 경우에만 항목이 나타나도록 */}
+						{/* 해당 연산자를 사용하지 않으면 이미지가 없을 때 엑박이 뜸 */}
+						{
+							board.imgpath !== null && 
+							<img src={`${IMG_PATH}${board.imgpath}`} alt="test" />
+						}
 
 						<Button variant="primary" onClick={ () => {
 							// 게시물 수정 화면으로 이동
