@@ -44,7 +44,7 @@ let host;
 if (window.location.hostname === 'localhost') {
   host = 'http://localhost:8080'
 } else {
-  host = 'http://43.203.240.120:8080';
+  host = '/api';
 }
 
 console.log(host);
