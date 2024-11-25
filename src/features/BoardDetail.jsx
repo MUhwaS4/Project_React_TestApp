@@ -18,6 +18,7 @@ import { useSelector } from 'react-redux';
 const BoardDetail = () => {
 
 	// 파일 경로
+	// const IMG_PATH = '=C:/uploadfile';
 	const IMG_PATH = '/image/';
 
   const token = useSelector(state => state.member.token);
@@ -115,7 +116,8 @@ const BoardDetail = () => {
 						{/* 해당 연산자를 사용하지 않으면 이미지가 없을 때 엑박이 뜸 */}
 						{
 							board.imgpath !== null && 
-							<img src={`${IMG_PATH}${board.imgpath}`} alt="test" />
+							// <img src={`${IMG_PATH}${board.imgpath}`} alt="test" />
+							<img src={ board.imgpath } alt="test" />
 						}
 
 						<Button variant="primary" onClick={ () => {
